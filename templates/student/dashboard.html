@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Available Placement Drives</h3>
+
+<table class="table table-striped table-hover">
+
+<tr>
+<th>Job Title</th>
+<th>Description</th>
+<th>Eligibility</th>
+<th>Deadline</th>
+<th>Apply</th>
+</tr>
+
+{% for drive in drives %}
+
+<tr>
+
+<td>{{drive.job_title}}</td>
+<td>{{drive.job_description}}</td>
+<td>{{drive.eligibility}}</td>
+<td>{{drive.deadline}}</td>
+
+<td>
+<a href="/apply/{{drive.id}}" class="btn btn-primary">Apply</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

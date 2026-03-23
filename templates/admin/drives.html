@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Placement Drives</h3>
+
+<table class="table table-striped table-hover">
+
+<tr>
+<th>ID</th>
+<th>Job Title</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for drive in drives %}
+
+<tr>
+
+<td>{{drive.id}}</td>
+<td>{{drive.job_title}}</td>
+<td>{{drive.status}}</td>
+
+<td>
+
+{% if drive.status != "Approved" %}
+
+<a href="/approve_drive/{{drive.id}}" class="btn btn-success">
+Approve
+</a>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

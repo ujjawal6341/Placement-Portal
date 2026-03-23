@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Naukri Shala Placement Portal API
+  description: API documentation for the Placement Portal system
+  version: 1.0
+
+paths:
+
+  /login:
+    post:
+      summary: User login
+      description: Authenticate student, company or admin
+      responses:
+        '200':
+          description: Login successful
+
+  /student/dashboard:
+    get:
+      summary: Student dashboard
+      description: Shows available job drives
+
+  /company/create_drive:
+    post:
+      summary: Create job drive
+      description: Company creates a new recruitment drive
+
+  /student/apply/{drive_id}:
+    post:
+      summary: Apply for job
+      description: Student applies to a drive
+
+  /company/applications/{drive_id}:
+    get:
+      summary: View applicants
+      description: Company views students who applied

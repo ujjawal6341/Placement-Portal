@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>My Applications</h3>
+
+<table class="table table-striped table-hover">
+
+<tr>
+<th>Drive</th>
+<th>Status</th>
+<th>Applied On</th>
+</tr>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{app.id}}</td>
+<td>{{app.drive_id}}</td>
+<td>{{app.status}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

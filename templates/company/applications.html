@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Student Applications</h3>
+
+<table class="table table-striped">
+
+<tr>
+<th>Application ID</th>
+<th>Student Name</th>
+<th>Email</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{app.id}}</td>
+
+<td>{{students[app.id].name}}</td>
+
+<td>{{students[app.id].email}}</td>
+
+<td>{{app.status}}</td>
+
+<td>
+
+<a href="/update_application/{{app.id}}/Shortlisted"
+class="btn btn-warning btn-sm">Shortlist</a>
+
+<a href="/update_application/{{app.id}}/Selected"
+class="btn btn-success btn-sm">Select</a>
+
+<a href="/update_application/{{app.id}}/Rejected"
+class="btn btn-danger btn-sm">Reject</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
